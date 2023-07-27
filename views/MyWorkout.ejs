@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+        <div>
+            <ul>
+                <li><a href="/workoutScheduler">Home</a></li>
+                <li><a href="/workoutScheduler/MyWorkout">MyWorkout</a></li>
+                <li><a href="/workoutScheduler/createWorkout">CreateWorkout</a></li>
+            </ul>
+        </div>
+
+        <div>
+          
+ 
+                <label for="workoutName">WorkoutName</label>
+                <input type="text" name="workoutName" id="workoutName">
+
+                <label for="sets">Sets</label>
+                <input type="number" name="sets" id="sets">
+
+                <label for="reps">Reps</label>
+                <input type="number" name="reps" id="reps">
+
+                <label for="howtoperform">Steps</label>
+                <textarea type="text" name="howtoperform" id="howtoperform">
+                </textarea>
+
+                <label for="descriptionanduse">Uses</label>
+                <input type="text" name="descriptionanduse" id="descriptionanduse">
+
+               <button name="Create"  onclick="addData()">Create</button>
+          
+        </div>
+        
+        <div id="myworkoutlist">
+
+        </div>
+    </div>
+
+<script>
+
+
+
+    const getData=async (key)=>{
+        const workoutsaveddata = await localStorage.getItem(key);
+        if(workoutsaveddata){
+            console.log('data exist');
+           
+        }else{
+            console.log('notexist')
+        }
+        return workoutsaveddata
+    }
+
+    async function showWorkouts(){
+    document.getElementById('myworkoutlist').innerHTML='';
+
+    console.log('inside show')
+    const localdata = await localStorage.getItem('WorkoutData')
+    const workouts = JSON.parse(localdata)
+    
+    let list = document.getElementById('myworkoutlist')
+       
+        workouts.map((data,index)=>{
+            console.log(data)
+            list.innerHTML +=`
+                            <ul id=${index}>
+                            <button onclick=removeWorkout(${index})>Delete</button>
+                            <li>Workout : ${ data['workoutname']} </li>
+                            <li>Sets : ${ data['sets']} </li>
+                            <li>Reps : ${ data['reps']} </li>
+                            <li>Steps : ${ data['howtoperform']} </li>
+                            <li>Uses : ${ data['descriptionanduse']} </li>
+                            </ul>`
+        })
+    }
+
+    const addfirstTime =async (newData)=>{
+        const workoutdataarray=[newData];
+        const converarraytostring= JSON.stringify(workoutdataarray);
+        await localStorage.setItem('WorkoutData',converarraytostring);
+    
+    }
+  
+    const addtoExisting =async (newData)=>{
+        const workoutExistingdata = await getData('WorkoutData');
+        const convertToarray = JSON.parse(workoutExistingdata);
+       
+        convertToarray.push(newData);
+       
+        const newWorkoutConverttostring = JSON.stringify(convertToarray);
+        await localStorage.setItem('WorkoutData',newWorkoutConverttostring);
+       
+        
+    }
+
+    async function setEmpty(){
+    document.getElementById('workoutName').value='';
+    document.getElementById('sets').value='';
+    document.getElementById('reps').value='';
+    document.getElementById('howtoperform').value='';
+    document.getElementById('descriptionanduse').value='';
+    }
+    
+
+    async function addData(){
+
+    const existingdata=await getData('WorkoutData');
+    
+
+    const workoutname = document.getElementById('workoutName').value;
+    const sets = document.getElementById('sets').value;
+    const reps = document.getElementById('reps').value;
+    const howtoperform = document.getElementById('howtoperform').value;
+    const descriptionanduse = document.getElementById('descriptionanduse').value;
+    
+    const newWorkout = {
+        workoutname:workoutname,
+        sets:sets,
+        reps:reps,
+        howtoperform:howtoperform,
+        descriptionanduse:descriptionanduse
+    }
+
+
+    if(existingdata){
+       
+        await addtoExisting(newWorkout);
+        showWorkouts()
+        setEmpty()
+        return console.log('addto existingh task complete')
+        
+    }else{
+       
+        await addfirstTime(newWorkout);
+        showWorkouts()
+        setEmpty()
+        return console.log('created new workout complete')
+        
+    }
+
+    
+    
+    }
+
+    
+  
+    
+    async function removeWorkout(position){
+        const workoutslists = await localStorage.getItem('WorkoutData')
+        const wokroutsdata = JSON.parse(workoutslists)
+        const newData= wokroutsdata.filter( (data,index)=>{if(index!=position){return data}} )
+        const afterremovelist= JSON.stringify(newData);
+        await localStorage.setItem('WorkoutData',afterremovelist)
+       
+        showWorkouts()
+
+    }
+
+    showWorkouts()
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form action="/workoutScheduler/Edit/<%= data._id %>" method="post">
+
+            <label for="workoutName">WorkoutName</label>
+            <input type="text" name="workoutName" value="<%= data.workoutName %>" id="workoutName">
+
+            <label for="sets">Sets</label>
+            <input type="number" name="sets" value="<%= data.sets  %>" id="sets">
+
+            <label for="reps">Reps</label>
+            <input type="number" name="reps" value="<%= data.reps  %>"  id="reps">
+
+            <label for="howtoperform">Steps</label>
+            <input type="text" name="howtoperform" value="<%= data.howtoperform  %>"  id="howtoperform">
+
+            <label for="descriptionanduse">Uses</label>
+            <input type="text" name="descriptionanduse" value="<%= data.descriptionanduse  %>"  id="descriptionanduse">
+
+           <button name="Create" type="submit">Create</button>
+        </form>
+    </div>
+</body>
+</html>

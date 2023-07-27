@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+       
+        <div>
+            <ul>
+                <li><a href="/workoutScheduler">Home</a></li>
+                <li><a href="/workoutScheduler/MyWorkout">MyWorkout</a></li>
+                <li><a href="/workoutScheduler/createWorkout">CreateWorkout</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <% data.forEach(element => { %>
+                <div id=<%= element._id %> >
+                    <form action="/workoutScheduler/Delete/<%= element._id %>"  method="post">
+                        <button type="submit">Delete</button>
+                    </form>
+                    <ul>
+                        <li>  <label>Workout :</label>  <%= element.workoutName %></li>
+                        <li>  <label>Sets :</label>  <%=element.sets %> </li>
+                        <li>  <label>Reps :</label>  <%=element.reps %> </li>
+                        <li>  <label>Steps :</label>  <%=element.howtoperform %> </li>
+                        <li>  <label>Uses :</label>  <%=element.descriptionanduse %> </li>
+                    </ul>
+                   <form action="/workoutScheduler/Edit/<%= element._id %>">
+                        <button type="submit">Edit</button>
+                    </form>
+                </div>
+            <% }) %>
+        </div>
+
+
+    </div>
+</body>
+</html>
