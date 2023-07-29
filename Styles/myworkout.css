@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Mitr:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=REM:wght@600&display=swap');
+
+    *{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        
+    }
+    #myworkoutmain{
+        min-height: 100vh;
+        display: grid;
+        grid-template-rows: 8vh 92vh;
+        grid-template-columns: 70vw 30vw;
+        background-color: rgb(210, 18, 18);
+        opacity: 0.9;
+    }
+    #navdiv{
+        grid-column: 1/ span 2;
+        grid-row: 1;
+        display: flex;
+        justify-content: flex-end;
+        background-color: #000000;
+        align-items: center;
+    }
+    #navullist{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 18vw;
+        height: 6vh;
+        list-style: none;
+    }
+    #navullist li a{
+        text-decoration: none;
+        color: #ffffff;
+        font-family: 'Bungee Spice', cursive;
+        
+    }
+    #createworkoutform{
+        grid-row: 2;
+        grid-column: 2;
+        background-color: #fff;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 6px;
+        padding: 5px 5px;
+        border-radius: 8px;
+        font-family: 'Bungee Spice', cursive;
+
+    }
+
+    #createworkoutform input{
+        width: 15vw;
+        height: 8vh;
+        padding: 5px;
+        border: none;
+    }
+
+    #createworkoutform textarea{
+        width: 28vw;
+        height: 20vh;
+        resize: none;
+        padding: 5px;
+    }
+
+    #myworkoutlist{
+        margin: 6px 10px;
+        grid-column: 1;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+     
+        
+    }
+    
+    #myworkoutlist h2{
+        text-align: center;
+        font-family: 'Bungee Spice', cursive;
+        text-shadow: 2px 2px #000000;
+    }
+ 
+    #myworkoutlist ul{
+        background-color: #fff;
+        padding: 5px 10px;
+        width: 66vw;
+        box-shadow: 6px 6px 10px black;
+        position: relative;
+        border-radius: 15px;
+       
+        
+    }
+    #myworkoutlist ul button{
+        position: absolute;
+        right: 10px;
+        border: none;
+        height: 5vh;
+        width: 5vw;
+        border-radius: 15px;
+        background-color: #fc0303;
+    }
+    #createbutton{
+        width: 5vw;
+        height: 5vh;
+        color: #fff;
+        font-size:small;
+        background: linear-gradient(#fc0303,#d55324);
+        border: none;
+        border-radius: 10px;
+        align-self: flex-end;
+        margin-right: 25px;
+        font-family: 'REM', sans-serif;
+       
+    }
+
+    li{
+        display: flex;
+        align-items: center;
+        column-gap: 15px;
+        height: 6vh;
+    }
+    
+    li  p{
+        font-family: 'REM', sans-serif;
+       
+    }
+    
+    li label{
+        font-family: 'Bungee Spice', cursive;
+        font-family: 'Mitr', sans-serif;
+    }
+       

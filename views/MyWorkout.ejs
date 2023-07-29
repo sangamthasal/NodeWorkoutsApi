@@ -4,49 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+   
+    <link rel="stylesheet" href="/Styles/myworkout.css">
 </head>
 <body>
-    <div>
+    <div id="myworkoutmain">
 
-        <div>
-            <ul>
+        <div id="navdiv">
+            <ul id="navullist">
                 <li><a href="/workoutScheduler">Home</a></li>
                 <li><a href="/workoutScheduler/MyWorkout">MyWorkout</a></li>
-                <li><a href="/workoutScheduler/createWorkout">CreateWorkout</a></li>
             </ul>
         </div>
 
-        <div>
-          
+        <div id="myworkoutlist">
+           
+        </div>
+
+        <div id="createworkoutform">
+
+                <h1>Create Workout</h4>
  
                 <label for="workoutName">WorkoutName</label>
-                <input type="text" name="workoutName" id="workoutName">
-
+                <input type="text" name="workoutName" id="workoutName" placeholder="Deadlift">
+                <hr>
                 <label for="sets">Sets</label>
-                <input type="number" name="sets" id="sets">
-
+                <input type="number" name="sets" id="sets" placeholder="3">
+                <hr>
                 <label for="reps">Reps</label>
-                <input type="number" name="reps" id="reps">
-
+                <input type="number" name="reps" id="reps" placeholder="15">
+                <hr>
                 <label for="howtoperform">Steps</label>
                 <textarea type="text" name="howtoperform" id="howtoperform">
                 </textarea>
-
+                <hr>
                 <label for="descriptionanduse">Uses</label>
-                <input type="text" name="descriptionanduse" id="descriptionanduse">
+                <textarea type="text"  name="descriptionanduse" id="descriptionanduse" >
+                </textarea>
 
-               <button name="Create"  onclick="addData()">Create</button>
+               <button name="Create" id="createbutton"  onclick="addData()">Create</button>
           
         </div>
         
-        <div id="myworkoutlist">
-
-        </div>
+       
     </div>
 
 <script>
 
-
+showWorkouts()
 
     const getData=async (key)=>{
         const workoutsaveddata = await localStorage.getItem(key);
@@ -65,21 +70,27 @@
     console.log('inside show')
     const localdata = await localStorage.getItem('WorkoutData')
     const workouts = JSON.parse(localdata)
-    
+    console.log(workouts)
     let list = document.getElementById('myworkoutlist')
-       
+       console.log(workouts.length)
+       if(workouts.length<1){
+
+            list.innerHTML='<h2>Add your workout </h2>'
+
+       }else{
+            console.log('inside else')
         workouts.map((data,index)=>{
             console.log(data)
             list.innerHTML +=`
                             <ul id=${index}>
                             <button onclick=removeWorkout(${index})>Delete</button>
-                            <li>Workout : ${ data['workoutname']} </li>
-                            <li>Sets : ${ data['sets']} </li>
-                            <li>Reps : ${ data['reps']} </li>
-                            <li>Steps : ${ data['howtoperform']} </li>
-                            <li>Uses : ${ data['descriptionanduse']} </li>
+                            <li> <label> Workout :</label> <p>${ data['workoutname']}</p> </li>
+                            <li> <label>  Sets :</label> <p> ${ data['sets']}</p> </li>
+                            <li> <label> Reps : </label> <p> ${ data['reps']}</p> </li>
+                            <li> <label> Steps : </label> <p> ${ data['howtoperform']}</p> </li>
+                            <li> <label> Uses : </label> <p> ${ data['descriptionanduse']}</p></li>
                             </ul>`
-        })
+        })}
     }
 
     const addfirstTime =async (newData)=>{
@@ -164,7 +175,7 @@
 
     }
 
-    showWorkouts()
+    
 
 </script>
 

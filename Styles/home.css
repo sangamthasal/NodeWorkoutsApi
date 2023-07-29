@@ -1,0 +1,111 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Bungee Spice', cursive;
+}
+body{
+    background-image: url("/assets/Bgimage.jpg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-attachment: scroll;
+    background-size:60vw;
+}
+
+#homemain{
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 8vh 90vh;
+    background-color: rgb(210, 18, 18);
+    opacity: 0.9;
+}
+   
+#navdiv{
+   
+    display: flex;
+    justify-content: flex-end;
+    background-color: #000000;
+    align-items: center;
+}
+#navullist{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 18vw;
+    height: 6vh;
+    list-style: none;
+}
+#navullist li a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+#wokroutCategorylist{
+   
+    height: 90vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    column-gap: 100px;
+    overflow-y: hidden;
+    
+}
+.WorkoutCategoryCard{
+    height: 35vh;
+    width: 20vw;
+    background: linear-gradient(#ff03039b 0%, #8f0303 10%, #7d0404 50%, #4a0202 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    position: relative;
+}
+
+.WorkoutCategoryCard::before{
+    content: '';
+    height: 5vh;
+    width: 16vw;
+    background: linear-gradient(#8d1212 0%, #a30505 60%, #4d0202 100%);
+    filter: blur(18px);
+}
+
+.WorkoutCategoryCard::after{
+    content:'';
+    position: absolute;
+    width: 20vw;
+    height: 2vh;
+    background: rgba(0, 0, 0, 0.6);
+    bottom: -30px;
+    z-index: -1;
+    filter: blur(9px);
+}
+
+.WorkoutCategoryCard a{
+    height: 30vh;
+    width: 20vw;
+    text-align: center;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    text-decoration: none;
+    flex-direction: column;
+    color: rgb(255, 255, 255);
+    
+}
+
+.WorkoutCategoryCard h4{
+    text-shadow:2px 2px #000000;
+}
+img{
+    height: 20vh;
+    width: 15vw;
+    border-radius: 10px;   
+}
+

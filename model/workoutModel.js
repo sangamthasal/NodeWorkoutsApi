@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 
 const workoutSchema = new mongoose.Schema(
     {
+        workoutCategory:{
+            type:String,
+            required:true
+        },
         workoutName:{
             type:String,
             required:true
@@ -20,6 +24,7 @@ const workoutSchema = new mongoose.Schema(
         },
         descriptionanduse:{
             type:String,
+            required:true
         },
     
     },

@@ -6,6 +6,8 @@ const router = express.Router();
 
 router.get("/",handleGetAllWorkout);
 
+
+
 router.route("/createWorkout").get(handleGetAllWorkout).post(handleCreateWorkout);
 
 router.get("/Myworkout",handleGetAllWorkout);

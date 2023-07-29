@@ -6,6 +6,8 @@ const path = require('path')
 
 const app = express();
 
+app.use("/assets",express.static('assets'))
+app.use("/Styles",express.static('Styles'))
 app.set("view engine" , "ejs");
 app.set("views", path.resolve('./views'))
 

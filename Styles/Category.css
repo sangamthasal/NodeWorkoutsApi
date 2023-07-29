@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Mitr:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=REM:wght@600&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+#Categorymain{
+    height: 100vh;
+    width: 100vw;
+    padding: 10px;
+    overflow-x: hidden;
+}
+#Categoryworkoutcard{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+}
+.workoutcard{
+    display: flex;
+    align-items: center;
+    min-height:50vh;
+    margin: 0px 10px;
+    background-color: #fafafa;
+    padding-left: 30px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px black;
+}
+
+.workoutcard ul{
+    list-style: none;
+}
+
+li{
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    height: 6vh;
+}
+
+li  p{
+    font-family: 'REM', sans-serif;
+   
+}
+
+li label{
+    font-family: 'Bungee Spice', cursive;
+    font-family: 'Mitr', sans-serif;
+}
+   

@@ -1,0 +1,148 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Mitr:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=REM:wght@600&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#createdivmain{
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 8vh 92vh;
+    background-color: rgb(210, 18, 18);
+    opacity: 0.9;
+}
+   
+#navdiv{
+   
+    display: flex;
+    justify-content: flex-end;
+    background-color: #000000;
+    align-items: center;
+}
+#navullist{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30vw;
+    height: 6vh;
+    list-style: none;
+}
+#navullist li a{
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'Bungee Spice', cursive;
+}
+
+#createworkoutform{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#createworkoutform form{
+   
+    background-color: #fff;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 6px;
+    padding: 5px 5px;
+    border-radius: 8px;
+    width: 40vw;
+    height: 90vh;
+    font-family: 'Bungee Spice', cursive;
+}
+
+#createworkoutform input{
+    width: 15vw;
+    height: 6vh;
+    padding: 5px;
+    border: none;
+}
+
+#createworkoutform textarea{
+    width: 36vw;
+    height: 18vh;
+    resize: none;
+    padding: 5px;
+}
+#createbutton{
+    width: 5vw;
+    height: 5vh;
+    color: #fff;
+    font-size:small;
+    background: linear-gradient(#fc0303,#d55324);
+    border: none;
+    border-radius: 10px;
+    align-self: flex-end;
+    margin-right: 25px;
+    font-family: 'REM', sans-serif;
+}
+
+#Categoryworkoutcard{
+    
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+}
+.workoutcard{
+    display: flex;
+    align-items: center;
+    min-height:50vh;
+    margin: 0px 10px;
+    background-color: #fafafa;
+    padding-left: 30px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px black;
+    position: relative;
+}
+
+.workoutcard ul{
+    list-style: none;
+}
+
+li{
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    height: 6vh;
+}
+
+li  p{
+    font-family: 'REM', sans-serif;
+   
+}
+
+li label{
+    font-family: 'Bungee Spice', cursive;
+    font-family: 'Mitr', sans-serif;
+}
+#Deleteform{
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    
+}
+#Editform{
+    position: absolute;
+    right: 15px;
+    bottom: 20px;
+   
+}
+
+form button{
+    width: 5vw;
+    height: 5vh;
+    color: #fff;
+    font-size:small;
+    background: linear-gradient(#fc0303,#d55324);
+    border: none;
+    border-radius: 10px;
+    align-self: flex-end;
+    margin-right: 25px;
+    font-family: 'REM', sans-serif;
+}

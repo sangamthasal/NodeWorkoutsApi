@@ -9,6 +9,9 @@
     <div>
         <form action="/workoutScheduler/Edit/<%= data._id %>" method="post">
 
+            <label for="workoutCategory">WorkoutCategory</label>
+            <input type="text" name="workoutCategory" value="<%= data.workoutCategory %>" id="workoutCategory">
+
             <label for="workoutName">WorkoutName</label>
             <input type="text" name="workoutName" value="<%= data.workoutName %>" id="workoutName">
 
