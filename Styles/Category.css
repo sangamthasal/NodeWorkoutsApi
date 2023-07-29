@@ -17,6 +17,8 @@
     display: flex;
     flex-direction: column;
     row-gap: 40px;
+   
+    
 }
 .workoutcard{
     display: flex;
@@ -27,6 +29,7 @@
     padding-left: 30px;
     border-radius: 10px;
     box-shadow: 10px 10px 15px black;
+    
 }
 
 .workoutcard ul{
