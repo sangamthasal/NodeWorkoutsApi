@@ -6,7 +6,7 @@
         box-sizing: border-box;
         padding: 0;
         margin: 0;
-        
+        font-size: medium;
     }
     #myworkoutmain{
         min-height: 100vh;
@@ -28,7 +28,7 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-        width: 18vw;
+        width: 30vw;
         height: 6vh;
         list-style: none;
     }
@@ -49,6 +49,7 @@
         padding: 5px 5px;
         border-radius: 8px;
         font-family: 'Bungee Spice', cursive;
+        
 
     }
 
@@ -81,12 +82,16 @@
         text-align: center;
         font-family: 'Bungee Spice', cursive;
         text-shadow: 2px 2px #000000;
+        font-size: medium;
     }
  
     #myworkoutlist ul{
         background-color: #fff;
         padding: 5px 10px;
         width: 66vw;
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
         box-shadow: 6px 6px 10px black;
         position: relative;
         border-radius: 15px;
@@ -94,6 +99,7 @@
         
     }
     #myworkoutlist ul button{
+        font-size:small;
         position: absolute;
         right: 10px;
         border: none;
@@ -120,16 +126,328 @@
         display: flex;
         align-items: center;
         column-gap: 15px;
-        height: 6vh;
+        height: 10vh;
+
     }
     
     li  p{
         font-family: 'REM', sans-serif;
+        font-size: medium;
        
     }
     
     li label{
         font-family: 'Bungee Spice', cursive;
         font-family: 'Mitr', sans-serif;
+        font-size: medium;
     }
        
+@media screen and (min-width:320px) and (max-width:480px){
+
+*{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        font-family: 'Bungee Spice', cursive;
+        font-size:x-small;
+}
+#myworkoutmain{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 20% 40% 58% ;
+    grid-template-columns: 100%;
+    background-color: rgb(210, 18, 18);
+    opacity: 0.9;
+}
+       
+#navdiv{
+    grid-row: 1;
+    grid-column: 1;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content:flex-end;
+    background-color: #000000;
+    
+}
+
+#navullist{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    list-style: none;
+ 
+}
+#navullist li a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#createworkoutform{
+    grid-column: 1;
+    grid-row: 2;
+    height: 90%;
+    width: 80%;
+    background-color: #fff;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 6px;
+    padding: 5px 5px;
+    border-radius: 8px;
+    font-family: 'Bungee Spice', cursive;
+    align-self: center;
+    justify-self: center;
+
+}
+#createworkoutform input{
+    width: 40%;
+    height: 10%;
+    padding: 5px;
+    border: none;
+}
+
+#createworkoutform textarea{
+    width: 90%;
+    height: 30%;
+    resize: none;
+    padding: 5px;
+}
+
+
+#myworkoutlist{
+    justify-self: center;
+    grid-column: 1;
+    width: 90%;
+    grid-row: 3;
+    margin: 6px 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px; 
+    align-items: center;
+    overflow-y: scroll;
+}
+
+#createbutton{
+    width: 20%;
+    height: 30%;
+    color: #fff;
+    font-size:small;
+    background: linear-gradient(#fc0303,#d55324);
+    border: none;
+    border-radius: 10px;
+    align-self: flex-end;
+    margin-right: 25px;
+    font-family: 'REM', sans-serif;
+   
+}
+#myworkoutlist ul{
+    background-color: #fff;
+    width: 100%;
+    min-height: 100%;
+    padding: 5px 5px;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    
+    box-shadow: 6px 6px 10px black;
+    position: relative;
+    border-radius: 15px;
+    
+}
+#myworkoutlist ul button{
+    position: absolute;
+    right: 10px;
+    border: none;
+    width: 20%;
+    height: 5%;
+    border-radius: 15px;
+    background-color: #060606;
+    font-size: x-small;
+}
+
+li{
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    height: 40%;
+    flex-wrap: wrap;
+   
+
+}
+
+li  p{
+    font-family: 'REM', sans-serif;
+    font-size: small;
+   
+}
+
+li label{
+    font-family: 'Bungee Spice', cursive;
+    font-family: 'Mitr', sans-serif;
+    font-size: small;
+}
+
+}
+
+
+
+
+
+@media screen and (min-width:481px) and (max-width:768px) {
+
+
+
+    *{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        font-family: 'Bungee Spice', cursive;
+        font-size:small;
+}
+#myworkoutmain{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 20% 40% 58% ;
+    grid-template-columns: 100%;
+    background-color: rgb(210, 18, 18);
+    opacity: 0.9;
+}
+       
+#navdiv{
+    grid-row: 1;
+    grid-column: 1;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content:flex-end;
+    background-color: #000000;
+    
+}
+
+#navullist{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    list-style: none;
+ 
+}
+#navullist li a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#createworkoutform{
+    grid-column: 1;
+    grid-row: 2;
+    height: 90%;
+    width: 80%;
+    background-color: #fff;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 6px;
+    padding: 5px 5px;
+    border-radius: 8px;
+    font-family: 'Bungee Spice', cursive;
+    align-self: center;
+    justify-self: center;
+
+}
+#createworkoutform input{
+    width: 40%;
+    height: 10%;
+    padding: 5px;
+    border: none;
+}
+
+#createworkoutform textarea{
+    width: 90%;
+    height: 30%;
+    resize: none;
+    padding: 5px;
+}
+
+
+#myworkoutlist{
+    justify-self: center;
+    grid-column: 1;
+    height: 100%;
+    width: 90%;
+    grid-row: 3;
+    margin: 6px 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px; 
+    align-items: center;
+    overflow-y: scroll;
+}
+
+#createbutton{
+    width: 20%;
+    height: 30%;
+    color: #fff;
+    font-size:small;
+    background: linear-gradient(#fc0303,#d55324);
+    border: none;
+    border-radius: 10px;
+    align-self: flex-end;
+    margin-right: 25px;
+    font-family: 'REM', sans-serif;
+   
+}
+#myworkoutlist ul{
+    background-color: #fff;
+    width: 100%;
+    height: auto;
+    padding: 5px 5px;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 6px 6px 10px black;
+    position: relative;
+    border-radius: 15px;
+    
+}
+#myworkoutlist ul button{
+    position: absolute;
+    right: 10px;
+    border: none;
+    width: 20%;
+    height: 5%;
+    border-radius: 15px;
+    background-color: #060606;
+    font-size: x-small;
+}
+
+li{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 15px;
+    height: 40%;
+    width: 100%;
+   
+
+}
+
+li  p{
+    font-family: 'REM', sans-serif;
+    font-size: small;
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+
+li label{
+    font-family: 'Bungee Spice', cursive;
+    font-family: 'Mitr', sans-serif;
+    font-size: small;
+}
+
+
+}

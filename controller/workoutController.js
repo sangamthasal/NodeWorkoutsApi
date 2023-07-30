@@ -8,10 +8,10 @@ async function handleGetAllWorkout(req,res){
    if(workoutcategory){
 
     const q = workoutcategory.toLowerCase();
-    console.log(q);
+
     const allcategoryworkout = await workoutModel.find({workoutCategory:q})
 
-    console.log(allcategoryworkout)
+  
     if(allcategoryworkout.length>0){
         
     return res.render('CategoryWorkout',{data:allcategoryworkout})
@@ -46,7 +46,7 @@ async function handleCreateWorkout(req,res){
         return res.status(400).json({msg:'Please fill fields'});
     }
     
-    const result = await workoutModel.create({
+        await workoutModel.create({
         workoutCategory:body.workoutCategory.toLowerCase(),
         workoutName: body.workoutName,
         sets: body.sets,
@@ -89,7 +89,7 @@ async function handleDeleteWorkoutById(req,res){
         
             if(result){
                 
-                const allWorkout = await workoutModel.find({})
+            
                 return res.redirect('/workoutScheduler/createWorkout');
                 
             }
@@ -112,7 +112,7 @@ async function handleUpdateWorkoutById(req,res){
     const parseData = JSON.parse(JSON.stringify(olddata));
     
 
-    const result = await workoutModel.findByIdAndUpdate(req.params.id, {  
+    await workoutModel.findByIdAndUpdate(req.params.id, {  
         workoutCategory:req.body.workoutCategory || parseData.workoutCategory,
         workoutName:req.body.workoutName || parseData.workoutName,
         sets:req.body.sets || parseData.sets,
@@ -121,7 +121,7 @@ async function handleUpdateWorkoutById(req,res){
         descriptionanduse:req.body.descriptionanduse || parseData.descriptionanduse
  })
 
-    const alldata = await workoutModel.find({});
+   
     
     return res.redirect('/workoutScheduler/createWorkout');
   }

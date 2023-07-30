@@ -3,6 +3,7 @@ const {connectMongodb} = require('./connection');
 const {router} = require('./routes/workoutRoutes');
 const path = require('path')
 
+const PORT = process.env.PORT
 
 const app = express();
 
@@ -12,7 +13,7 @@ app.set("view engine" , "ejs");
 app.set("views", path.resolve('./views'))
 
 connectMongodb().then(console.log('database is connected')).then(
-app.listen(2000,()=>{console.log('server is running')})
+app.listen(PORT,()=>{console.log('server is running on'+PORT)})
 ).catch((err)=>{console.log(err)})
 
 

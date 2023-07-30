@@ -6,6 +6,7 @@
     padding: 0;
     margin: 0;
     font-family: 'Bungee Spice', cursive;
+    font-size: medium;
 }
 body{
     background-image: url("/assets/Bgimage.jpg");
@@ -24,17 +25,18 @@ body{
 }
    
 #navdiv{
-   
+    width: 100vw;
     display: flex;
     justify-content: flex-end;
     background-color: #000000;
     align-items: center;
+   
 }
 #navullist{
     display: flex;
-    justify-content: space-around;
+    justify-content:space-around;
     align-items: center;
-    width: 18vw;
+    width: 30vw;
     height: 6vh;
     list-style: none;
 }
@@ -109,3 +111,152 @@ img{
     border-radius: 10px;   
 }
 
+@media screen and (min-width:300px)and (max-width:480px){
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+*{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        font-family: 'Bungee Spice', cursive;
+        font-size:small;
+}
+
+body{
+        background-image: url("/assets/Bgimage.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: scroll;
+        background-size:500px 800px;
+
+}
+   
+#homemain{
+    background-color: #b91f1f;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows:20% 80%;
+    gap: 20px;
+   
+}
+
+   
+#navdiv{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content:flex-end;
+    background-color: #000000;
+    
+}
+
+#navullist{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    list-style: none;
+ 
+}
+#navullist li a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#wokroutCategorylist{
+   align-self: center;
+   height: 100%;
+   width: 100%;
+   display: grid;
+   grid-row-gap: 10px;
+   grid-column-gap: 50px;
+   grid-template-columns: 120px 120px;
+   justify-content: center;
+  
+}
+.WorkoutCategoryCard{
+    width: 120px;
+    height: 180px;
+    background: linear-gradient(#ff03039b 0%, #8f0303 10%, #7d0404 50%, #4a0202 100%);
+  
+}
+
+img{
+    height: 80px;
+    width: 100px;
+    border-radius: 10px;   
+}
+
+}
+
+@media screen and (min-width:481px) and (max-width:768px) {
+
+    @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+    *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: 'Bungee Spice', cursive;
+            font-size:small;
+    }
+    
+    body{
+            background-image: url("/assets/Bgimage.jpg");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: scroll;
+            background-size:800px 800px;
+    
+    }
+
+    #navdiv{
+        width: 100%;
+        height: 40px;
+        display: flex;
+        justify-content:flex-end;
+        background-color: #000000;
+        
+    }
+    
+    #navullist{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 55%;
+        list-style: none;
+     
+    }
+
+    #wokroutCategorylist{
+   
+        height: 90vh;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto;
+        column-gap: 30px;
+        overflow-y: hidden;
+        
+    }
+
+    .WorkoutCategoryCard{
+        height: 190px;
+        width: 140px;
+        background: linear-gradient(#ff03039b 0%, #8f0303 10%, #7d0404 50%, #4a0202 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        position: relative;
+    }
+
+    img{
+        height: 80px;
+        width: 100px;
+        border-radius: 10px;   
+    }
+
+}
