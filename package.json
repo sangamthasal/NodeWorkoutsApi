@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index",
-    "build":"npm build"
+    "build":"npm i"
   },
-  "author": "",
+  "author": "", 
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.3.1",
