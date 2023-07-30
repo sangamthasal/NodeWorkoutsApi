@@ -20,7 +20,7 @@ body{
     min-height: 100vh;
     display: grid;
     grid-template-rows: 8vh 90vh;
-    background-color: rgb(210, 18, 18);
+    background-color: rgb(255, 255, 255);
     opacity: 0.9;
 }
    
@@ -72,8 +72,8 @@ body{
 
 .WorkoutCategoryCard::before{
     content: '';
-    height: 5vh;
-    width: 16vw;
+    height: 2vh;
+    width: 20vw;
     background: linear-gradient(#8d1212 0%, #a30505 60%, #4d0202 100%);
     filter: blur(18px);
 }
@@ -132,7 +132,7 @@ body{
 }
    
 #homemain{
-    background-color: #b91f1f;
+    background-color: rgb(255, 255, 255);
     width: 100%;
     height: 100%;
     display: grid;
@@ -208,6 +208,16 @@ img{
             background-attachment: scroll;
             background-size:800px 800px;
     
+    }
+
+    #homemain{
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-rows:20% 80%;
+        gap: 20px;
+       
     }
 
     #navdiv{
