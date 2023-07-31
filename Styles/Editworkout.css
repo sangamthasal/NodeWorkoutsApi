@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Mitr:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=REM:wght@600&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+form{
+   
+    background-color: #ce1f1f;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 6px;
+    padding: 5px 5px;
+    border-radius: 8px;
+    width: 100vw;
+    height: 90vh;
+    font-family: 'Bungee Spice', cursive;
+    text-shadow: 2px 2px black;
+}
+
+ input{
+    width: 50vw;
+    height: 6vh;
+    padding: 5px;
+    border: none;
+}
+
+#howtoperform ,#descriptionanduse{
+    width: 50vw;
+    height: 18vh;
+    resize: none;
+    padding: 5px;
+}
+
+button{
+    width: 5vw;
+    height: 5vh;
+    color: #fff;
+    font-size:small;
+    background: linear-gradient(#fc0303,#d55324);
+    border: none;
+    border-radius: 10px;
+    margin-right: 25px;
+    font-family: 'REM', sans-serif;
+}
+
